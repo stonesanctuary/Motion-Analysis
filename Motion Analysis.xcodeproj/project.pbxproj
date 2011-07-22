@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A040B7413DA17110054972E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A040B7313DA17110054972E /* Cocoa.framework */; };
+		6A040B7E13DA17110054972E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B7C13DA17110054972E /* InfoPlist.strings */; };
+		6A040B8013DA17110054972E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B7F13DA17110054972E /* main.m */; };
+		6A040B8413DA17110054972E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8213DA17110054972E /* Credits.rtf */; };
+		6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */; };
+		6A040B8A13DA17110054972E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8813DA17110054972E /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6A040B6F13DA17110054972E /* Motion Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motion Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A040B7313DA17110054972E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6A040B7613DA17110054972E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6A040B7713DA17110054972E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6A040B7813DA17110054972E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6A040B7B13DA17110054972E /* Motion Analysis-Info.plist */ = {isa = PBXFileReference; path = "Motion Analysis-Info.plist"; sourceTree = "<group>"; };
+		6A040B7D13DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A040B7F13DA17110054972E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A040B8113DA17110054972E /* Motion Analysis-Prefix.pch */ = {isa = PBXFileReference; path = "Motion Analysis-Prefix.pch"; sourceTree = "<group>"; };
+		6A040B8313DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */ = {isa = PBXFileReference; path = Motion_AnalysisAppDelegate.h; sourceTree = "<group>"; };
+		6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motion_AnalysisAppDelegate.m; sourceTree = "<group>"; };
+		6A040B8913DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A040B6C13DA17110054972E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A040B7413DA17110054972E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A040B6413DA17110054972E = {
+			isa = PBXGroup;
+			children = (
+				6A040B7913DA17110054972E /* Motion Analysis */,
+				6A040B7213DA17110054972E /* Frameworks */,
+				6A040B7013DA17110054972E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A040B7013DA17110054972E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A040B6F13DA17110054972E /* Motion Analysis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A040B7213DA17110054972E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A040B7313DA17110054972E /* Cocoa.framework */,
+				6A040B7513DA17110054972E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A040B7513DA17110054972E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A040B7613DA17110054972E /* AppKit.framework */,
+				6A040B7713DA17110054972E /* CoreData.framework */,
+				6A040B7813DA17110054972E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6A040B7913DA17110054972E /* Motion Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */,
+				6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */,
+				6A040B8813DA17110054972E /* MainMenu.xib */,
+				6A040B7A13DA17110054972E /* Supporting Files */,
+			);
+			path = "Motion Analysis";
+			sourceTree = "<group>";
+		};
+		6A040B7A13DA17110054972E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A040B7B13DA17110054972E /* Motion Analysis-Info.plist */,
+				6A040B7C13DA17110054972E /* InfoPlist.strings */,
+				6A040B7F13DA17110054972E /* main.m */,
+				6A040B8113DA17110054972E /* Motion Analysis-Prefix.pch */,
+				6A040B8213DA17110054972E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A040B6E13DA17110054972E /* Motion Analysis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A040B8D13DA17110054972E /* Build configuration list for PBXNativeTarget "Motion Analysis" */;
+			buildPhases = (
+				6A040B6B13DA17110054972E /* Sources */,
+				6A040B6C13DA17110054972E /* Frameworks */,
+				6A040B6D13DA17110054972E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Motion Analysis";
+			productName = "Motion Analysis";
+			productReference = 6A040B6F13DA17110054972E /* Motion Analysis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A040B6613DA17110054972E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Stone Sanctuary Interactive Inc.";
+			};
+			buildConfigurationList = 6A040B6913DA17110054972E /* Build configuration list for PBXProject "Motion Analysis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6A040B6413DA17110054972E;
+			productRefGroup = 6A040B7013DA17110054972E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A040B6E13DA17110054972E /* Motion Analysis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A040B6D13DA17110054972E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A040B7E13DA17110054972E /* InfoPlist.strings in Resources */,
+				6A040B8413DA17110054972E /* Credits.rtf in Resources */,
+				6A040B8A13DA17110054972E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A040B6B13DA17110054972E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A040B8013DA17110054972E /* main.m in Sources */,
+				6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6A040B7C13DA17110054972E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A040B7D13DA17110054972E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6A040B8213DA17110054972E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A040B8313DA17110054972E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6A040B8813DA17110054972E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A040B8913DA17110054972E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A040B8B13DA17110054972E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6A040B8C13DA17110054972E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6A040B8E13DA17110054972E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Motion Analysis/Motion Analysis-Prefix.pch";
+				INFOPLIST_FILE = "Motion Analysis/Motion Analysis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6A040B8F13DA17110054972E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Motion Analysis/Motion Analysis-Prefix.pch";
+				INFOPLIST_FILE = "Motion Analysis/Motion Analysis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A040B6913DA17110054972E /* Build configuration list for PBXProject "Motion Analysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A040B8B13DA17110054972E /* Debug */,
+				6A040B8C13DA17110054972E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A040B8D13DA17110054972E /* Build configuration list for PBXNativeTarget "Motion Analysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A040B8E13DA17110054972E /* Debug */,
+				6A040B8F13DA17110054972E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A040B6613DA17110054972E /* Project object */;
+}
