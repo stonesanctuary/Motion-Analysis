@@ -13,6 +13,7 @@
 		6A040B8413DA17110054972E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8213DA17110054972E /* Credits.rtf */; };
 		6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */; };
 		6A040B8A13DA17110054972E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8813DA17110054972E /* MainMenu.xib */; };
+		6A040B9213DA18340054972E /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B9113DA18340054972E /* AppController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +22,16 @@
 		6A040B7613DA17110054972E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6A040B7713DA17110054972E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6A040B7813DA17110054972E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6A040B7B13DA17110054972E /* Motion Analysis-Info.plist */ = {isa = PBXFileReference; path = "Motion Analysis-Info.plist"; sourceTree = "<group>"; };
+		6A040B7B13DA17110054972E /* Motion Analysis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Motion Analysis-Info.plist"; sourceTree = "<group>"; };
 		6A040B7D13DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A040B7F13DA17110054972E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A040B8113DA17110054972E /* Motion Analysis-Prefix.pch */ = {isa = PBXFileReference; path = "Motion Analysis-Prefix.pch"; sourceTree = "<group>"; };
+		6A040B8113DA17110054972E /* Motion Analysis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Motion Analysis-Prefix.pch"; sourceTree = "<group>"; };
 		6A040B8313DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */ = {isa = PBXFileReference; path = Motion_AnalysisAppDelegate.h; sourceTree = "<group>"; };
+		6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Motion_AnalysisAppDelegate.h; sourceTree = "<group>"; };
 		6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motion_AnalysisAppDelegate.m; sourceTree = "<group>"; };
 		6A040B8913DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6A040B9013DA18340054972E /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		6A040B9113DA18340054972E /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		6A040B7913DA17110054972E /* Motion Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				6A040B9013DA18340054972E /* AppController.h */,
+				6A040B9113DA18340054972E /* AppController.m */,
 				6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */,
 				6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */,
 				6A040B8813DA17110054972E /* MainMenu.xib */,
@@ -167,6 +172,7 @@
 			files = (
 				6A040B8013DA17110054972E /* main.m in Sources */,
 				6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */,
+				6A040B9213DA18340054972E /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
