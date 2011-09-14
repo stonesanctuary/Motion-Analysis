@@ -10,8 +10,19 @@
 
 @interface AppController : NSObject {
     IBOutlet NSView *view;
+    
+    int _count;
+    
+    double *_x;
+    double *_y;
+    double *_z;
+    
+    double *_gx;
+    double *_gy;
+    double *_gz;
 }
 
 - (IBAction)showOpenPanel:(id)sender;
+- (IBAction)doStuff:(id)sender;
 
 @end

@@ -14,6 +14,8 @@
 		6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */; };
 		6A040B8A13DA17110054972E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8813DA17110054972E /* MainMenu.xib */; };
 		6A040B9213DA18340054972E /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B9113DA18340054972E /* AppController.m */; };
+		6AAD7BE214200CE2006DCD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AAD7BE114200CE2006DCD96 /* Accelerate.framework */; };
+		6AAD7BEB142065A4006DCD96 /* Vec3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD7BEA142065A4006DCD96 /* Vec3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		6A040B8913DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6A040B9013DA18340054972E /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		6A040B9113DA18340054972E /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		6AAD7BE114200CE2006DCD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6AAD7BE9142065A4006DCD96 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3.h; sourceTree = "<group>"; };
+		6AAD7BEA142065A4006DCD96 /* Vec3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vec3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AAD7BE214200CE2006DCD96 /* Accelerate.framework in Frameworks */,
 				6A040B7413DA17110054972E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +72,7 @@
 		6A040B7213DA17110054972E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AAD7BE114200CE2006DCD96 /* Accelerate.framework */,
 				6A040B7313DA17110054972E /* Cocoa.framework */,
 				6A040B7513DA17110054972E /* Other Frameworks */,
 			);
@@ -89,6 +96,8 @@
 				6A040B9113DA18340054972E /* AppController.m */,
 				6A040B8513DA17110054972E /* Motion_AnalysisAppDelegate.h */,
 				6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */,
+				6AAD7BE9142065A4006DCD96 /* Vec3.h */,
+				6AAD7BEA142065A4006DCD96 /* Vec3.m */,
 				6A040B8813DA17110054972E /* MainMenu.xib */,
 				6A040B7A13DA17110054972E /* Supporting Files */,
 			);
@@ -173,6 +182,7 @@
 				6A040B8013DA17110054972E /* main.m in Sources */,
 				6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */,
 				6A040B9213DA18340054972E /* AppController.m in Sources */,
+				6AAD7BEB142065A4006DCD96 /* Vec3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +302,7 @@
 				6A040B8F13DA17110054972E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
