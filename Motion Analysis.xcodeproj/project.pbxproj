@@ -14,9 +14,49 @@
 		6A040B8713DA17110054972E /* Motion_AnalysisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B8613DA17110054972E /* Motion_AnalysisAppDelegate.m */; };
 		6A040B8A13DA17110054972E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A040B8813DA17110054972E /* MainMenu.xib */; };
 		6A040B9213DA18340054972E /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A040B9113DA18340054972E /* AppController.m */; };
+		6A9F7AFA144E04C10092C7ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F7AF9144E04C10092C7ED /* QuartzCore.framework */; };
+		6A9F7B2C144E0BEF0092C7ED /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A9F7B26144E0B900092C7ED /* CorePlot.framework */; };
+		6A9F7B2D144E0C000092C7ED /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F7B26144E0B900092C7ED /* CorePlot.framework */; };
 		6AAD7BE214200CE2006DCD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AAD7BE114200CE2006DCD96 /* Accelerate.framework */; };
 		6AAD7BEB142065A4006DCD96 /* Vec3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD7BEA142065A4006DCD96 /* Vec3.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A9F7B25144E0B900092C7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		6A9F7B27144E0B900092C7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
+		6A9F7B29144E0BA00092C7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A9F7B2B144E0BD60092C7ED /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6A9F7B2C144E0BEF0092C7ED /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6A040B6F13DA17110054972E /* Motion Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motion Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +74,8 @@
 		6A040B8913DA17110054972E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6A040B9013DA18340054972E /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		6A040B9113DA18340054972E /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		6A9F7AF9144E04C10092C7ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = ../CorePlot_0.9/Source/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 		6AAD7BE114200CE2006DCD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6AAD7BE9142065A4006DCD96 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3.h; sourceTree = "<group>"; };
 		6AAD7BEA142065A4006DCD96 /* Vec3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vec3.m; sourceTree = "<group>"; };
@@ -44,7 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9F7AFA144E04C10092C7ED /* QuartzCore.framework in Frameworks */,
 				6AAD7BE214200CE2006DCD96 /* Accelerate.framework in Frameworks */,
+				6A9F7B2D144E0C000092C7ED /* CorePlot.framework in Frameworks */,
 				6A040B7413DA17110054972E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +102,7 @@
 				6A040B7913DA17110054972E /* Motion Analysis */,
 				6A040B7213DA17110054972E /* Frameworks */,
 				6A040B7013DA17110054972E /* Products */,
+				6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +117,7 @@
 		6A040B7213DA17110054972E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A9F7AF9144E04C10092C7ED /* QuartzCore.framework */,
 				6AAD7BE114200CE2006DCD96 /* Accelerate.framework */,
 				6A040B7313DA17110054972E /* Cocoa.framework */,
 				6A040B7513DA17110054972E /* Other Frameworks */,
@@ -116,6 +162,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6A9F7B1D144E0B900092C7ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A9F7B26144E0B900092C7ED /* CorePlot.framework */,
+				6A9F7B28144E0B900092C7ED /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,10 +181,12 @@
 				6A040B6B13DA17110054972E /* Sources */,
 				6A040B6C13DA17110054972E /* Frameworks */,
 				6A040B6D13DA17110054972E /* Resources */,
+				6A9F7B2B144E0BD60092C7ED /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A9F7B2A144E0BA00092C7ED /* PBXTargetDependency */,
 			);
 			name = "Motion Analysis";
 			productName = "Motion Analysis";
@@ -142,6 +199,7 @@
 		6A040B6613DA17110054972E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Stone Sanctuary Interactive Inc.";
 			};
 			buildConfigurationList = 6A040B6913DA17110054972E /* Build configuration list for PBXProject "Motion Analysis" */;
@@ -154,12 +212,35 @@
 			mainGroup = 6A040B6413DA17110054972E;
 			productRefGroup = 6A040B7013DA17110054972E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6A9F7B1D144E0B900092C7ED /* Products */;
+					ProjectRef = 6A9F7B1C144E0B900092C7ED /* CorePlot.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6A040B6E13DA17110054972E /* Motion Analysis */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6A9F7B26144E0B900092C7ED /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = 6A9F7B25144E0B900092C7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6A9F7B28144E0B900092C7ED /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 6A9F7B27144E0B900092C7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6A040B6D13DA17110054972E /* Resources */ = {
@@ -187,6 +268,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A9F7B2A144E0BA00092C7ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CorePlot;
+			targetProxy = 6A9F7B29144E0BA00092C7ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A040B7C13DA17110054972E /* InfoPlist.strings */ = {
@@ -264,6 +353,10 @@
 		6A040B8E13DA17110054972E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Motion Analysis/libs/CorePlot_0.9/Binaries/MacOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Motion Analysis/Motion Analysis-Prefix.pch";
 				INFOPLIST_FILE = "Motion Analysis/Motion Analysis-Info.plist";
@@ -275,6 +368,10 @@
 		6A040B8F13DA17110054972E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Motion Analysis/libs/CorePlot_0.9/Binaries/MacOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Motion Analysis/Motion Analysis-Prefix.pch";
 				INFOPLIST_FILE = "Motion Analysis/Motion Analysis-Info.plist";
