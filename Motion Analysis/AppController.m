@@ -10,6 +10,16 @@
 #import <Accelerate/Accelerate.h>
 #import "Vec3.h"
 
+double sign(double v);
+
+double sign(double v)
+{
+    if ( v < 0 ) {
+        return -1.0;
+    } 
+    return 1.0;
+}
+
 @implementation AppController
 
 @synthesize dataSourceLinePlot = _dataSourceLinePlot;
@@ -38,6 +48,8 @@
         
         _t = NULL;
         
+        _p1 = NULL;
+        
         _count = 0;
     }
     
@@ -63,6 +75,8 @@
     if ( _roll != NULL) free(_roll);
     if ( _pitch != NULL) free(_pitch);
     if ( _yaw != NULL) free(_yaw);
+    
+    if ( _p1 != NULL ) free(_p1);
     
     self.url = nil;
     self.dataSourceLinePlot = nil;
@@ -123,9 +137,11 @@
         data = _roll;
     } else if ( [column isEqualToString:@"pitch"] ) {
         data = _pitch;
-    } else if ( [column isEqualToString:@"ya"] ) {
+    } else if ( [column isEqualToString:@"yaw"] ) {
         data = _yaw;
-    } else {
+    } else if ( [column isEqualToString:@"p1"] ) {
+        data = _p1;
+    }else {
         data = _x;
     }
 
@@ -277,8 +293,8 @@
     FILE* f = fopen([path UTF8String], "w");
     if ( f ) {
         fprintf(f, "timestamp, t, x, y, z, gx, gy, gz, rx, ry, rz, roll, pitch, yaw\n");
-        for ( NSUInteger i = 0; i < _count; ++i ) {
-            fprintf(f, "%f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f\n", _t[i], _x[i], _y[i], _z[i], _gx[i], _gy[i], _gz[i], _rx[i], _ry[i], _rz[i], _roll[i], _pitch[i], _yaw[i]);
+        for ( NSUInteger i = 0; i < _accelCount; ++i ) {
+            fprintf(f, "%f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f\n", _t[i], _x[i], _y[i], _z[i], _gx[i], _gy[i], _gz[i], _rx[i], _ry[i], _rz[i], _roll[i], _pitch[i], _yaw[i], _p1[i]);
         }
         fclose(f);
     }  
@@ -306,57 +322,68 @@
             _roll = malloc(sizeof(double) * _count);
             _pitch = malloc(sizeof(double) * _count);
             _yaw = malloc(sizeof(double) * _count);
+            _p1 = malloc(sizeof(double) * _count);
             
             NSLog(@"There are %lu elements", _count);
+            _accelCount = 0;
             
             for ( NSUInteger i = 0; i < [data count]; ++i ) {
                 double timestamp, timestamp0, t, x, y, z, gx, gy, gz, rx, ry, rz, roll, yaw, pitch;
+                double p1;
                 
-                timestamp = [[[data objectAtIndex:i] valueForKey:@"timestamp"] doubleValue];
-                if ( i == 0 ) {
-                    timestamp0 = timestamp;
+                NSString* record = [[data objectAtIndex:i] valueForKey:@"type"];
+                if ( [record isEqualToString:@"accel"] ) {
+                    timestamp = [[[data objectAtIndex:i] valueForKey:@"timestamp"] doubleValue];
+                    if ( _accelCount == 0 ) {
+                        timestamp0 = timestamp;
+                    }
+                    t = timestamp - timestamp0;
+                    _t[_accelCount] = t;
+                    
+                    x = [[[data objectAtIndex:i] valueForKey:@"x"] doubleValue];
+                    y = [[[data objectAtIndex:i] valueForKey:@"y"] doubleValue];
+                    z = [[[data objectAtIndex:i] valueForKey:@"z"] doubleValue];
+                    
+                    _x[_accelCount] = x;
+                    _y[_accelCount] = y;
+                    _z[_accelCount] = z;
+                    
+                    gx = [[[data objectAtIndex:i] valueForKey:@"gx"] doubleValue];
+                    gy = [[[data objectAtIndex:i] valueForKey:@"gy"] doubleValue];
+                    gz = [[[data objectAtIndex:i] valueForKey:@"gz"] doubleValue];
+                    
+                    _gx[_accelCount] = gx;
+                    _gy[_accelCount] = gy;
+                    _gz[_accelCount] = gz;
+                    
+                    rx = [[[data objectAtIndex:i] valueForKey:@"rx"] doubleValue];
+                    ry = [[[data objectAtIndex:i] valueForKey:@"ry"] doubleValue];
+                    rz = [[[data objectAtIndex:i] valueForKey:@"rz"] doubleValue];
+                    
+                    _rx[_accelCount] = rx;
+                    _ry[_accelCount] = ry;
+                    _rz[_accelCount] = rz;
+                    
+                    roll = [[[data objectAtIndex:i] valueForKey:@"roll"] doubleValue];
+                    pitch = [[[data objectAtIndex:i] valueForKey:@"pitch"] doubleValue];
+                    yaw = [[[data objectAtIndex:i] valueForKey:@"yaw"] doubleValue];
+                    
+                    _roll[_accelCount] = roll;
+                    _pitch[_accelCount] = pitch;
+                    _yaw[_accelCount] = yaw;
+                    
+                    p1 = sqrt(x*x + y*y + z*z) * -sign( x*gx + y*gy + z*gz);
+                    
+                    _p1[_accelCount] = p1;
+                    
+                    ++_accelCount;
                 }
-                t = timestamp - timestamp0;
-                _t[i] = t;
-                
-                x = [[[data objectAtIndex:i] valueForKey:@"x"] doubleValue];
-                y = [[[data objectAtIndex:i] valueForKey:@"y"] doubleValue];
-                z = [[[data objectAtIndex:i] valueForKey:@"z"] doubleValue];
-                
-                _x[i] = x;
-                _y[i] = y;
-                _z[i] = z;
-                
-                gx = [[[data objectAtIndex:i] valueForKey:@"gx"] doubleValue];
-                gy = [[[data objectAtIndex:i] valueForKey:@"gy"] doubleValue];
-                gz = [[[data objectAtIndex:i] valueForKey:@"gz"] doubleValue];
-                
-                _gx[i] = gx;
-                _gy[i] = gy;
-                _gz[i] = gz;
-                
-                rx = [[[data objectAtIndex:i] valueForKey:@"rx"] doubleValue];
-                ry = [[[data objectAtIndex:i] valueForKey:@"ry"] doubleValue];
-                rz = [[[data objectAtIndex:i] valueForKey:@"rz"] doubleValue];
-                
-                _rx[i] = rx;
-                _ry[i] = ry;
-                _rz[i] = rz;
-                
-                roll = [[[data objectAtIndex:i] valueForKey:@"roll"] doubleValue];
-                pitch = [[[data objectAtIndex:i] valueForKey:@"pitch"] doubleValue];
-                yaw = [[[data objectAtIndex:i] valueForKey:@"yaw"] doubleValue];
-                
-                _roll[i] = roll;
-                _pitch[i] = pitch;
-                _yaw[i] = yaw;
-                
             }
         }
     
 //        NSUInteger index = [tableView columnWithIdentifier:@"t"];
 //        NSTableColumn* tc = [tableView.tableColumns objectAtIndex:index] ;
-        NSArray* columns = [[NSArray alloc] initWithObjects:@"x", @"y", @"z", @"gx", @"gy", @"gz", @"rx", @"ry", @"rz", nil];
+        NSArray* columns = [[NSArray alloc] initWithObjects:@"x", @"y", @"z", @"gx", @"gy", @"gz", @"rx", @"ry", @"rz", @"p1", nil];
         for ( NSString* identifier in columns ) {
             NSTableColumn* nc = [[[NSTableColumn alloc] initWithIdentifier:identifier] autorelease];
             NSTableHeaderCell* hc = [[[NSTableHeaderCell alloc] init] autorelease];
@@ -397,7 +424,7 @@
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView*)tv
 {
-    return _count;
+    return _accelCount; // _count
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -424,6 +451,8 @@
         value = _ry[row];
     } else if ( [tableColumn.identifier isEqualToString:@"rz"] ) {
         value = _rz[row];
+    } else if ( [tableColumn.identifier isEqualToString:@"p1"] ) {
+        value = _p1[row];
     }
     
     return [NSNumber numberWithDouble:value];

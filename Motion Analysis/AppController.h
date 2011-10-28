@@ -18,6 +18,7 @@
     IBOutlet NSTableView *tableView;
     
     NSUInteger _count;
+    NSUInteger _accelCount;
     
     double *_t;
     
@@ -36,6 +37,8 @@
     double *_roll;
     double *_pitch;
     double *_yaw;  
+    
+    double *_p1;
     
     NSURL* _url;
     
