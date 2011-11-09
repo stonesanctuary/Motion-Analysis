@@ -164,10 +164,10 @@ double sign(double v)
     
     // Setup plot space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
-    double minT = [self minValue:_t count:_count];
-    double maxT = [self maxValue:_t count:_count];
-    double minX = [self minValue:data count:_count];
-    double maxX = [self maxValue:data count:_count];
+    double minT = [self minValue:_t count:_accelCount];
+    double maxT = [self maxValue:_t count:_accelCount];
+    double minX = [self minValue:data count:_accelCount];
+    double maxX = [self maxValue:data count:_accelCount];
     
     double tRange = maxT - minT;
     double xRange = maxX - minX;
@@ -222,7 +222,7 @@ double sign(double v)
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    return _count;
+    return _accelCount;
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
@@ -332,7 +332,7 @@ double sign(double v)
                 double p1;
                 
                 NSString* record = [[data objectAtIndex:i] valueForKey:@"type"];
-                if ( [record isEqualToString:@"accel"] ) {
+                if ( (record == nil) || [record isEqualToString:@"accel"] ) {
                     timestamp = [[[data objectAtIndex:i] valueForKey:@"timestamp"] doubleValue];
                     if ( _accelCount == 0 ) {
                         timestamp0 = timestamp;
@@ -372,7 +372,10 @@ double sign(double v)
                     _pitch[_accelCount] = pitch;
                     _yaw[_accelCount] = yaw;
                     
-                    p1 = sqrt(x*x + y*y + z*z) * -sign( x*gx + y*gy + z*gz);
+                    p1 = [[[data objectAtIndex:i] valueForKey:@"p1"] doubleValue];
+                    if ( p1 == 0.0 ) {
+                      p1 = sqrt(x*x + y*y + z*z) * -sign( x*gx + y*gy + z*gz);  
+                    }
                     
                     _p1[_accelCount] = p1;
                     
@@ -383,7 +386,7 @@ double sign(double v)
     
 //        NSUInteger index = [tableView columnWithIdentifier:@"t"];
 //        NSTableColumn* tc = [tableView.tableColumns objectAtIndex:index] ;
-        NSArray* columns = [[NSArray alloc] initWithObjects:@"x", @"y", @"z", @"gx", @"gy", @"gz", @"rx", @"ry", @"rz", @"p1", nil];
+        NSArray* columns = [[NSArray alloc] initWithObjects:@"p1", @"x", @"y", @"z", @"gx", @"gy", @"gz", @"rx", @"ry", @"rz",  nil];
         for ( NSString* identifier in columns ) {
             NSTableColumn* nc = [[[NSTableColumn alloc] initWithIdentifier:identifier] autorelease];
             NSTableHeaderCell* hc = [[[NSTableHeaderCell alloc] init] autorelease];
